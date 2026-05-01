@@ -52,5 +52,4 @@ Este é um projeto de portfólio para corretores de imóveis de alto padrão, de
 
 Este projeto foi desenvolvido como um portfólio de demonstração. Sinta-se à vontade para usá-lo e adaptá-lo.
 
----
-*Desenvolvido com o auxílio do Stitch.*
+
