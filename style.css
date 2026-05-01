@@ -1,0 +1,39 @@
+/* 
+   ARQUIVO: style.css
+   DESCRIÇÃO: Estilos globais e customizações para o portal Estate Heritage.
+   NOTA: O site utiliza Tailwind CSS via CDN, portanto a maioria dos estilos 
+   está aplicada diretamente no HTML. Use este arquivo para ajustes finos.
+*/
+
+:root {
+    --primary-bronze: #AC855E;
+    --surface-off-white: #F7F5F2;
+}
+
+/* Transição suave para hover em links e botões */
+a, button {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Customização da barra de rolagem (opcional) */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #AC855E;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #8e6d4d;
+}
+
+/* Ajustes finos para tipografia Serif */
+h1, h2, h3, .font-serif {
+    font-family: 'Noto Serif', serif;
+}

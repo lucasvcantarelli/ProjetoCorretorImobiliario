@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="pt-br"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Estate Heritage | Imóveis de Luxo e Residências Exclusivas</title>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Noto Serif para títulos e Manrope para corpo de texto -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Manrope:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Estilos Customizados Externos -->
+<link href="css/style.css" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#ffffff",
+                    "primary-container": "#926d48",
+                    "surface-container": "#f4ece6",
+                    "surface": "#fff8f3",
+                    "primary-fixed-dim": "#ebbe93",
+                    "on-surface": "#1e1b17",
+                    "background": "#fff8f3",
+                    "tertiary-fixed": "#c5e7fc",
+                    "secondary-container": "#e6ded9",
+                    "on-primary-fixed-variant": "#5f401f",
+                    "secondary-fixed-dim": "#cdc5c0",
+                    "on-background": "#1e1b17",
+                    "on-primary-container": "#fffbff",
+                    "error-container": "#ffdad6",
+                    "on-error-container": "#93000a",
+                    "on-surface-variant": "#4f453c",
+                    "secondary-fixed": "#e9e1dc",
+                    "on-tertiary-fixed": "#001e2b",
+                    "surface-container-low": "#faf2ec",
+                    "inverse-surface": "#33302c",
+                    "secondary": "#635d5a",
+                    "primary-fixed": "#ffdcbd",
+                    "on-error": "#ffffff",
+                    "on-tertiary-fixed-variant": "#294b5c",
+                    "inverse-on-surface": "#f7efe9",
+                    "inverse-primary": "#ebbe93",
+                    "tertiary-container": "#58798b",
+                    "surface-dim": "#e0d9d2",
+                    "surface-tint": "#795834",
+                    "surface-container-high": "#eee7e0",
+                    "on-secondary-container": "#67625e",
+                    "on-primary-fixed": "#2c1600",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "outline-variant": "#d3c4b8",
+                    "surface-bright": "#fff8f3",
+                    "primary": "#775532",
+                    "tertiary-fixed-dim": "#a9cbe0",
+                    "tertiary": "#3f6072",
+                    "on-tertiary-container": "#fbfcff",
+                    "on-secondary-fixed-variant": "#4b4642",
+                    "error": "#ba1a1a",
+                    "on-primary": "#ffffff",
+                    "on-secondary-fixed": "#1e1b18",
+                    "surface-variant": "#e9e1db",
+                    "surface-container-highest": "#e9e1db",
+                    "outline": "#81756a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "gutter": "24px",
+                    "margin-page": "64px",
+                    "container-max": "1280px",
+                    "section-gap": "120px"
+            },
+            "fontFamily": {
+                    "headline-xl": ["Noto Serif"],
+                    "headline-md": ["Noto Serif"],
+                    "headline-lg": ["Noto Serif"],
+                    "body-lg": ["Manrope"],
+                    "label-caps": ["Manrope"],
+                    "body-md": ["Manrope"]
+            },
+            "fontSize": {
+                    "headline-xl": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .hero-gradient {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,0.4) 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- BARRA DE NAVEGAÇÃO SUPERIOR (TopNavBar)
+         Estrutura fixa no topo com efeito de desfoque (backdrop-blur).
+         Contém links internos para Início, Portfólio, Residencial, Comercial e Contato. -->
+<nav class="fixed top-0 w-full z-50 bg-[#F7F5F2]/80 dark:bg-stone-900/80 backdrop-blur-md border-b border-stone-200/50 shadow-sm">
+<div class="flex justify-between items-center w-full max-w-[1280px] mx-auto px-8 h-20">
+<a class="text-2xl font-serif tracking-widest text-stone-900 dark:text-stone-100 uppercase" href="index.html">ESTATE HERITAGE</a>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-serif tracking-tight text-sm uppercase text-[#AC855E] border-b-2 border-[#AC855E] pb-1" href="index.html">Início</a>
+<a class="font-serif tracking-tight text-sm uppercase text-stone-600 hover:text-[#AC855E] transition-colors duration-300" href="listagem.html">Portfólio</a>
+<a class="font-serif tracking-tight text-sm uppercase text-stone-600 hover:text-[#AC855E] transition-colors duration-300" href="listagem.html">Residencial</a>
+<a class="font-serif tracking-tight text-sm uppercase text-stone-600 hover:text-[#AC855E] transition-colors duration-300" href="listagem.html">Comercial</a>
+<a class="font-serif tracking-tight text-sm uppercase text-stone-600 hover:text-[#AC855E] transition-colors duration-300" href="contato.html">Contato</a>
+</div>
+<a class="bg-[#775532] text-on-primary px-8 py-3 font-label-caps text-label-caps uppercase hover:opacity-90 transition-opacity flex items-center justify-center" href="contato.html">SOLICITAR</a>
+</div>
+</nav>
+<!-- SEÇÃO HERO
+         Impacto visual inicial com imagem de alta resolução e filtro de busca integrado.
+         Utiliza classes Tailwind para centralização e sobreposição de elementos. -->
+<header class="relative h-[921px] min-h-[700px] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Villa arquitetônica moderna no Mediterrâneo ao pôr do sol" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-MUKNf1Jh_N9bcMsXGir1M9wUsaW-jzy6EbZWQ0E5didbxkkIAKTnjC3k-a_cgSEpNyKZOB7MUW3Jeo_iDMvblbyydrpOidnvIbbiwgZZRi04Uj6qrrvPKH2i5TMWzteFBIhTnFS909aoIU3gk-oKbnzTkV5ElTRyn_c1oYyD0DIbSWB-LdUiFp8fbmr0PzxBt_MMdGDzSKF9B_XJOjhMxT-mm52GvKwvSLMDb7tEEZ-IQNmETJTJRHCvw2uPFiidrIz1ylOHjkcq"/>
+<div class="absolute inset-0 hero-gradient"></div>
+</div>
+<div class="relative z-10 w-full max-w-container-max mx-auto px-margin-page text-center">
+<h1 class="font-headline-xl text-headline-xl text-white mb-8 max-w-3xl mx-auto">Descubra o Viver de Luxo em sua Essência</h1>
+<!-- FILTRO DE BUSCA (Search/Filter Bar)
+                 Permite filtrar por tipo de transação, tipo de imóvel e localização. -->
+<div class="bg-white/95 backdrop-blur-md p-2 shadow-2xl max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-2">
+<div class="flex-1 grid grid-cols-1 md:grid-cols-3 gap-2 w-full">
+<div class="px-4 py-3 border-r border-stone-100 text-left">
+<label class="block text-[10px] font-label-caps text-stone-400 uppercase mb-1">Comprar/Alugar</label>
+<select class="w-full bg-transparent border-none p-0 focus:ring-0 font-body-md text-stone-800 cursor-pointer">
+<option>Venda</option>
+<option>Aluguel</option>
+</select>
+</div>
+<div class="px-4 py-3 border-r border-stone-100 text-left">
+<label class="block text-[10px] font-label-caps text-stone-400 uppercase mb-1">Tipo de Imóvel</label>
+<select class="w-full bg-transparent border-none p-0 focus:ring-0 font-body-md text-stone-800 cursor-pointer">
+<option>Villa Moderna</option>
+<option>Propriedade Histórica</option>
+<option>Cobertura / Penthouse</option>
+</select>
+</div>
+<div class="px-4 py-3 text-left">
+<label class="block text-[10px] font-label-caps text-stone-400 uppercase mb-1">Cidade</label>
+<select class="w-full bg-transparent border-none p-0 focus:ring-0 font-body-md text-stone-800 cursor-pointer">
+<option>Londres, UK</option>
+<option>Mônaco</option>
+<option>Nova York, NY</option>
+</select>
+</div>
+</div>
+<button class="w-full md:w-auto bg-[#AC855E] text-white px-10 py-4 font-label-caps text-label-caps uppercase hover:bg-[#926d48] transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg" data-icon="search">search</span>
+                    Buscar
+                </button>
+</div>
+</div>
+</header>
+<!-- SEÇÃO DE PROPRIEDADES EM DESTAQUE (Featured Properties)
+         Grid de cards apresentando as residências exclusivas com links para a página de detalhes. -->
+<section class="py-section-gap px-margin-page max-w-container-max mx-auto">
+<div class="flex justify-between items-end mb-16">
+<div>
+<span class="text-primary font-label-caps text-label-caps uppercase tracking-widest mb-4 block">Curadoria</span>
+<h2 class="font-headline-lg text-headline-lg">Residências em Destaque</h2>
+</div>
+<a class="text-stone-400 hover:text-primary transition-colors font-label-caps text-label-caps uppercase border-b border-stone-200 pb-1" href="listagem.html">Ver Coleção</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Card de Propriedade 1 -->
+<a class="group cursor-pointer" href="detalhes.html">
+<div class="relative aspect-[4/5] overflow-hidden mb-6">
+<img alt="Interior minimalista de luxo com vista para o oceano" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbyd7peaHqU2owI_xyaaoqKAdXwc527Jq2RF8WZ7pOBOBEXlcDTXViqoeT7p5FMzMfBbNm4gXdL7Wrxx5rYwNeZwnhDRgjYI5DzvOHpIAiguUdpsQk0wBVsVwch4Xnl8VC5IQ_7GpVhXPw4tlL4kO7aSdds0oRGPKxRoEDC5CVOOK0fO0hRIGdTBefvx8f59uvzmJmng6FBJv0kldSun3b2SRgVizLqRGuhp2RZZ9Fhmc706ypWj2SP8V41Kdg7acTuMwR9qTisT4v"/>
+<div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 font-label-caps text-[10px] uppercase tracking-widest">Disponível</div>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2 group-hover:text-primary transition-colors">O Pavilhão de Vidro</h3>
+<p class="text-stone-500 font-body-md mb-4">Mayfair, Londres</p>
+<div class="flex justify-between items-center pt-4 border-t border-stone-100">
+<span class="font-serif text-lg">R$ 12.500.000</span>
+<div class="flex gap-4 text-stone-400 text-xs uppercase font-label-caps">
+<span>5 Quartos</span>
+<span>6 Banheiros</span>
+</div>
+</div>
+</a>
+<!-- Card de Propriedade 2 -->
+<a class="group cursor-pointer" href="detalhes.html">
+<div class="relative aspect-[4/5] overflow-hidden mb-6">
+<img alt="Mansão mediterrânea ao entardecer" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvTlQ7Z2Ba2d172d0rM1gbHEuNAQpoK27c5dLYd9cjXyYlerSj_54eMnVrwtF2TuzF6bQ3SY1Hit2bxRrvwf_T5XM19f6mGYjRAR-8DsOLvJfq67i8P7mwAG9MJeNuKKxQuZ3nx3DuDXZGJNsCtG4PCfbOQwOqdhkdX5qqIXkgU6K-uUJenzM932h6Q52oKWQAs4bRE1SQp6Jz-65clIBrV_3D8fwAvwZQmcJHUROqG5qeSDtKFjkzZAT1fSVHpyk3KozJ0vZ5LjGv"/>
+<div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 font-label-caps text-[10px] uppercase tracking-widest">Portfólio</div>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2 group-hover:text-primary transition-colors">Azure Heights</h3>
+<p class="text-stone-500 font-body-md mb-4">Monte Carlo, Monaco</p>
+<div class="flex justify-between items-center pt-4 border-t border-stone-100">
+<span class="font-serif text-lg">R$ 18.200.000</span>
+<div class="flex gap-4 text-stone-400 text-xs uppercase font-label-caps">
+<span>7 Quartos</span>
+<span>9 Banheiros</span>
+</div>
+</div>
+</a>
+<!-- Card de Propriedade 3 -->
+<a class="group cursor-pointer" href="detalhes.html">
+<div class="relative aspect-[4/5] overflow-hidden mb-6">
+<img alt="Cozinha contemporânea de penthouse com vista para skyline" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAl6Gp8oCELeO9Ci0eZdBTpVFc3fYDtmGySifsqCx2i404oDes-aaJYN7Uy4db|n75Pjd2clxsOpybE2UeWGk2j-TAWUfSv42RWVBqzj5nf8AgJwQa8WGRHQXeFYCrd3tp0JheCpUy0RzRLoKTOVl9W2efgRZ62HzwpGnnZ_hfT8D28smJf4M3YC6mxdkfLlVG9W0YCNFloG8jvQIBs3oYwreHzx5bd6O5RYLoZCa3i0ePZZeZgGbS3zG4Kx70XRRzjkTwLMxoSg1d__"/>
+<div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 font-label-caps text-[10px] uppercase tracking-widest">Lançamento</div>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2 group-hover:text-primary transition-colors">Suíte Obsidian</h3>
+<p class="text-stone-500 font-body-md mb-4">Upper East Side, NY</p>
+<div class="flex justify-between items-center pt-4 border-t border-stone-100">
+<span class="font-serif text-lg">R$ 9.800.000</span>
+<div class="flex gap-4 text-stone-400 text-xs uppercase font-label-caps">
+<span>3 Quartos</span>
+<span>4 Banheiros</span>
+</div>
+</div>
+</a>
+</div>
+</section>
+<!-- SEÇÃO "POR QUE NOS ESCOLHER" (Diferenciais)
+         Apresenta os valores da marca (Distinção Heritage) em uma estrutura de 3 colunas. -->
+<section class="bg-surface-container-low py-section-gap">
+<div class="max-w-container-max mx-auto px-margin-page">
+<div class="text-center max-w-2xl mx-auto mb-20">
+<h2 class="font-headline-lg text-headline-lg mb-6">A Distinção Heritage</h2>
+<p class="text-stone-600 font-body-lg">Para aqueles que exigem mais do que apenas uma casa, oferecemos uma experiência imobiliária incomparável construída em décadas de confiança.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+<div class="text-center">
+<div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-8 shadow-sm">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="verified">verified</span>
+</div>
+<h4 class="font-headline-md text-headline-md mb-4">Curadoria Exclusiva</h4>
+<p class="text-stone-500 font-body-md">Oferecemos acesso a propriedades fora do mercado que nunca chegam ao público, garantindo que nossos clientes encontrem tesouros verdadeiramente únicos.</p>
+</div>
+<div class="text-center">
+<div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-8 shadow-sm">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="lock">lock</span>
+</div>
+<h4 class="font-headline-md text-headline-md mb-4">Discrição Total</h4>
+<p class="text-stone-500 font-body-md">Sua privacidade é nossa prioridade máxima. Gerenciamos cada transação com o sigilo absoluto que os clientes de alto perfil esperam.</p>
+</div>
+<div class="text-center">
+<div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-8 shadow-sm">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="language">language</span>
+</div>
+<h4 class="font-headline-md text-headline-md mb-4">Alcance Global</h4>
+<p class="text-stone-500 font-body-md">Com parceiros em mais de 40 países, nossa rede abrange o mundo, conectando você às melhores propriedades onde quer que sua jornada o leve.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- SEÇÃO DE CHAMADA PARA AÇÃO (Private Consultation CTA)
+         Fundo escuro com imagem artística para evocar exclusividade e prestígio. -->
+<section class="relative py-32 overflow-hidden bg-stone-900">
+<div class="absolute inset-0 opacity-40">
+<img alt="Portfólio de couro luxuoso sobre mesa de nogueira" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4wJb67GvDTjS_AuCKCx8wnQDp4RXjYm_mO-yzq8obyYxfpCSroTwNYceNoRY6kLu8RtHKqEZwqOI4EQyjy3DjdYRPWza1qUSv37vtJw-spxlG1A_Rd2cU8gPhfIIYXN0by9KLjtlLOwsqvYffL1GIOVaTfVascJ6CiPdG6Xpf6NVMQK-uZmrKnSaNMX8waMC-hLabpziQKeD9hOvlTeOxipFUZLR24FC_jOTSOYE6DGqF1HsomVERSLxD3G_wf2IY9KmZFta87oPp"/>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-page text-center text-white">
+<h2 class="font-headline-xl text-headline-xl mb-8">Inicie seu Legado</h2>
+<p class="font-body-lg text-stone-300 max-w-2xl mx-auto mb-12">Permita que nossa equipe dedicada de concierge selecione propriedades adaptadas aos seus padrões e estilo de vida exigentes.</p>
+<a class="inline-block bg-[#AC855E] text-white px-12 py-5 font-label-caps text-label-caps uppercase hover:bg-opacity-90 transition-all tracking-[0.2em]" href="contato.html">SOLICITAR CONSULTORIA PRIVADA</a>
+</div>
+</section>
+<!-- RODAPÉ (Footer)
+         Informações de copyright e links rápidos de navegação. -->
+<footer class="bg-white border-t border-stone-100">
+<div class="flex flex-col md:flex-row justify-between items-center w-full max-w-[1280px] mx-auto px-8 py-12 gap-6">
+<div class="flex flex-col md:flex-row justify-between items-center w-full gap-8">
+<div class="flex gap-8 items-center">
+<a class="text-xs uppercase tracking-widest text-stone-500 hover:text-primary transition-colors" href="index.html">Início</a>
+<a class="text-xs uppercase tracking-widest text-stone-500 hover:text-primary transition-colors" href="listagem.html">Portfólio</a>
+<a class="text-xs uppercase tracking-widest text-stone-500 hover:text-primary transition-colors" href="contato.html">Contato</a>
+</div>
+<div class="text-xs text-stone-400 uppercase tracking-widest">© 2024 Estate Heritage Global. Todos os Direitos Reservados.</div>
+</div>
+</div>
+</footer>
+<!-- Scripts Externos -->
+<script defer="" src="js/scripts.js"></script>
+</body></html>
