@@ -74,4 +74,20 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // 5. Busca da home: redireciona para listagem.html com os filtros escolhidos
+    const searchButton = document.getElementById('busca-submit');
+    if (searchButton && typeof PropertyUtils !== 'undefined') {
+        searchButton.addEventListener('click', () => {
+            const transactionSelect = document.getElementById('busca-transacao');
+            const categorySelect = document.getElementById('busca-categoria');
+            const citySelect = document.getElementById('busca-cidade');
+            const query = PropertyUtils.buildSearchQuery({
+                transaction: transactionSelect ? transactionSelect.value : '',
+                category: categorySelect ? categorySelect.value : '',
+                citySlug: citySelect ? citySelect.value : '',
+            });
+            window.location.href = 'listagem.html' + (query ? '?' + query : '');
+        });
+    }
 });

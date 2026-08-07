@@ -118,8 +118,8 @@
 <div class="hidden md:flex gap-8 items-center">
 <a class="font-serif tracking-tight text-sm uppercase text-[#AC855E] border-b-2 border-[#AC855E] pb-1" href="index.html">Início</a>
 <a class="font-serif tracking-tight text-sm uppercase text-stone-600 hover:text-[#AC855E] transition-colors duration-300" href="listagem.html">Portfólio</a>
-<a class="font-serif tracking-tight text-sm uppercase text-stone-600 hover:text-[#AC855E] transition-colors duration-300" href="listagem.html">Residencial</a>
-<a class="font-serif tracking-tight text-sm uppercase text-stone-600 hover:text-[#AC855E] transition-colors duration-300" href="listagem.html">Comercial</a>
+<a class="font-serif tracking-tight text-sm uppercase text-stone-600 hover:text-[#AC855E] transition-colors duration-300" href="listagem.html?tipo=residencial">Residencial</a>
+<a class="font-serif tracking-tight text-sm uppercase text-stone-600 hover:text-[#AC855E] transition-colors duration-300" href="listagem.html?tipo=comercial">Comercial</a>
 <a class="font-serif tracking-tight text-sm uppercase text-stone-600 hover:text-[#AC855E] transition-colors duration-300" href="contato.html">Contato</a>
 </div>
 <a class="bg-[#775532] text-on-primary px-8 py-3 font-label-caps text-label-caps uppercase hover:opacity-90 transition-opacity flex items-center justify-center" href="contato.html">SOLICITAR</a>
@@ -130,8 +130,8 @@
 <div class="hidden md:hidden flex-col gap-1 px-8 py-4 border-t border-stone-200/50 bg-[#F7F5F2] dark:bg-stone-900" id="mobile-menu">
 <a class="font-serif tracking-tight text-sm uppercase text-[#AC855E] py-3" href="index.html">Início</a>
 <a class="font-serif tracking-tight text-sm uppercase text-stone-600 py-3" href="listagem.html">Portfólio</a>
-<a class="font-serif tracking-tight text-sm uppercase text-stone-600 py-3" href="listagem.html">Residencial</a>
-<a class="font-serif tracking-tight text-sm uppercase text-stone-600 py-3" href="listagem.html">Comercial</a>
+<a class="font-serif tracking-tight text-sm uppercase text-stone-600 py-3" href="listagem.html?tipo=residencial">Residencial</a>
+<a class="font-serif tracking-tight text-sm uppercase text-stone-600 py-3" href="listagem.html?tipo=comercial">Comercial</a>
 <a class="font-serif tracking-tight text-sm uppercase text-stone-600 py-3" href="contato.html">Contato</a>
 </div>
 </nav>
@@ -151,29 +151,31 @@
 <div class="flex-1 grid grid-cols-1 md:grid-cols-3 gap-2 w-full">
 <div class="px-4 py-3 border-r border-stone-100 text-left">
 <label class="block text-[10px] font-label-caps text-stone-400 uppercase mb-1">Comprar/Alugar</label>
-<select class="w-full bg-transparent border-none p-0 focus:ring-0 font-body-md text-stone-800 cursor-pointer">
-<option>Venda</option>
-<option>Aluguel</option>
+<select class="w-full bg-transparent border-none p-0 focus:ring-0 font-body-md text-stone-800 cursor-pointer" id="busca-transacao">
+<option value="venda">Venda</option>
+<option value="aluguel">Aluguel</option>
 </select>
 </div>
 <div class="px-4 py-3 border-r border-stone-100 text-left">
 <label class="block text-[10px] font-label-caps text-stone-400 uppercase mb-1">Tipo de Imóvel</label>
-<select class="w-full bg-transparent border-none p-0 focus:ring-0 font-body-md text-stone-800 cursor-pointer">
-<option>Villa Moderna</option>
-<option>Propriedade Histórica</option>
-<option>Cobertura / Penthouse</option>
+<select class="w-full bg-transparent border-none p-0 focus:ring-0 font-body-md text-stone-800 cursor-pointer" id="busca-categoria">
+<option value="villa-moderna">Villa Moderna</option>
+<option value="propriedade-historica">Propriedade Histórica</option>
+<option value="cobertura-penthouse">Cobertura / Penthouse</option>
 </select>
 </div>
 <div class="px-4 py-3 text-left">
 <label class="block text-[10px] font-label-caps text-stone-400 uppercase mb-1">Cidade</label>
-<select class="w-full bg-transparent border-none p-0 focus:ring-0 font-body-md text-stone-800 cursor-pointer">
-<option>Londres, UK</option>
-<option>Mônaco</option>
-<option>Nova York, NY</option>
+<select class="w-full bg-transparent border-none p-0 focus:ring-0 font-body-md text-stone-800 cursor-pointer" id="busca-cidade">
+<option value="">Todas as cidades</option>
+<option value="bel-air">Bel Air, Califórnia</option>
+<option value="saint-jean-cap-ferrat">Saint-Jean-Cap-Ferrat, França</option>
+<option value="lago-de-como">Lago de Como, Itália</option>
+<option value="cidade-do-cabo">Cidade do Cabo, África do Sul</option>
 </select>
 </div>
 </div>
-<button class="w-full md:w-auto bg-[#AC855E] text-white px-10 py-4 font-label-caps text-label-caps uppercase hover:bg-[#926d48] transition-colors flex items-center justify-center gap-2">
+<button class="w-full md:w-auto bg-[#AC855E] text-white px-10 py-4 font-label-caps text-label-caps uppercase hover:bg-[#926d48] transition-colors flex items-center justify-center gap-2" id="busca-submit" type="button">
 <span class="material-symbols-outlined text-lg" data-icon="search">search</span>
                     Buscar
                 </button>
@@ -192,7 +194,7 @@
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
 <!-- Card de Propriedade 1 -->
-<a class="group cursor-pointer" href="detalhes.html">
+<a class="group cursor-pointer" href="detalhes.html?id=pavilhao-vidro">
 <div class="relative aspect-[4/5] overflow-hidden mb-6">
 <img alt="Interior minimalista de luxo com vista para o oceano" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbyd7peaHqU2owI_xyaaoqKAdXwc527Jq2RF8WZ7pOBOBEXlcDTXViqoeT7p5FMzMfBbNm4gXdL7Wrxx5rYwNeZwnhDRgjYI5DzvOHpIAiguUdpsQk0wBVsVwch4Xnl8VC5IQ_7GpVhXPw4tlL4kO7aSdds0oRGPKxRoEDC5CVOOK0fO0hRIGdTBefvx8f59uvzmJmng6FBJv0kldSun3b2SRgVizLqRGuhp2RZZ9Fhmc706ypWj2SP8V41Kdg7acTuMwR9qTisT4v"/>
 <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 font-label-caps text-[10px] uppercase tracking-widest">Disponível</div>
@@ -208,7 +210,7 @@
 </div>
 </a>
 <!-- Card de Propriedade 2 -->
-<a class="group cursor-pointer" href="detalhes.html">
+<a class="group cursor-pointer" href="detalhes.html?id=azure-heights">
 <div class="relative aspect-[4/5] overflow-hidden mb-6">
 <img alt="Mansão mediterrânea ao entardecer" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvTlQ7Z2Ba2d172d0rM1gbHEuNAQpoK27c5dLYd9cjXyYlerSj_54eMnVrwtF2TuzF6bQ3SY1Hit2bxRrvwf_T5XM19f6mGYjRAR-8DsOLvJfq67i8P7mwAG9MJeNuKKxQuZ3nx3DuDXZGJNsCtG4PCfbOQwOqdhkdX5qqIXkgU6K-uUJenzM932h6Q52oKWQAs4bRE1SQp6Jz-65clIBrV_3D8fwAvwZQmcJHUROqG5qeSDtKFjkzZAT1fSVHpyk3KozJ0vZ5LjGv"/>
 <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 font-label-caps text-[10px] uppercase tracking-widest">Portfólio</div>
@@ -224,7 +226,7 @@
 </div>
 </a>
 <!-- Card de Propriedade 3 -->
-<a class="group cursor-pointer" href="detalhes.html">
+<a class="group cursor-pointer" href="detalhes.html?id=suite-obsidian">
 <div class="relative aspect-[4/5] overflow-hidden mb-6">
 <img alt="Cozinha contemporânea de penthouse com vista para skyline" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiumEjrO9frkyQrIsIaL9z3PfjDntycc1aM_naNjwXMwcb5ZCzDAzfja0Pnsto_KT5UXZP6_TdONJa39ITYRVF3HnDnbmssnXLI8UxjHh8uYrUcbKf186cL4sGYjvTH-tJI9vkYrNY0XOpyt88hKud2Cr62oxOmq34vuZGVBjZA_BGQVHIen8uOtbgug4PU1QvIHyaPZ1meabl3heyD-IL7L0zOlZmKfwMzdL6OG_1KLzRotGX80pg46JfloW4qHDXMte-Cxn-lZ3C"/>
 <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 font-label-caps text-[10px] uppercase tracking-widest">Lançamento</div>
@@ -301,5 +303,6 @@
 </div>
 </footer>
 <!-- Scripts Externos -->
+<script defer="" src="js/property-utils.js"></script>
 <script defer="" src="js/scripts.js"></script>
 </body></html>
