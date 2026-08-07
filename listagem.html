@@ -113,7 +113,7 @@
 <div class="flex justify-between items-center w-full max-w-[1280px] mx-auto px-8 h-20">
 <span class="text-2xl font-headline-md tracking-widest text-on-surface cursor-pointer" onclick="window.location.href='index.html'">ESTATE HERITAGE</span>
 <!-- Links Principais -->
-<div class="hidden md:flex items-center space-x-8">
+<div class="hidden lg:flex items-center space-x-8">
 <a class="font-label-caps text-sm uppercase text-secondary hover:text-primary transition-colors duration-300" href="index.html">Início</a>
 <a class="font-label-caps text-sm uppercase text-primary border-b-2 border-primary pb-1" href="listagem.html">Portfólio</a>
 <a class="font-label-caps text-sm uppercase text-secondary hover:text-primary transition-colors duration-300" href="listagem.html?tipo=residencial">Residencial</a>
@@ -122,16 +122,16 @@
 </div>
 <!-- Ações do Lado Direito -->
 <div class="flex items-center gap-6">
-<button aria-label="Pesquisar" class="text-secondary hover:text-primary transition-colors">
+<button aria-label="Pesquisar" class="hidden lg:inline-flex text-secondary hover:text-primary transition-colors">
 <span class="material-symbols-outlined">search</span>
 </button>
-<button class="bg-primary text-white px-6 py-2 font-label-caps tracking-tight text-sm uppercase hover:bg-primary-container transition-colors" onclick="window.location.href='contato.html'">Consultar</button>
-<button aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menu" class="md:hidden text-on-surface" id="mobile-menu-button" type="button">
+<button class="hidden lg:inline-block bg-primary text-white px-6 py-2 font-label-caps tracking-tight text-sm uppercase hover:bg-primary-container transition-colors" onclick="window.location.href='contato.html'">Consultar</button>
+<button aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menu" class="lg:hidden text-on-surface" id="mobile-menu-button" type="button">
 <span class="material-symbols-outlined text-3xl">menu</span>
 </button>
 </div>
 </div>
-<div class="hidden md:hidden flex-col gap-1 px-8 py-4 border-t border-outline-variant/50 bg-surface dark:bg-stone-900" id="mobile-menu">
+<div class="hidden lg:hidden flex-col gap-1 px-8 py-4 border-t border-outline-variant/50 bg-surface-dim dark:bg-stone-900" id="mobile-menu">
 <a class="font-label-caps text-sm uppercase text-secondary py-3" href="index.html">Início</a>
 <a class="font-label-caps text-sm uppercase text-primary py-3" href="listagem.html">Portfólio</a>
 <a class="font-label-caps text-sm uppercase text-secondary py-3" href="listagem.html?tipo=residencial">Residencial</a>
