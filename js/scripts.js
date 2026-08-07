@@ -45,4 +45,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Selecione elementos para animar se desejar
     // document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+    // 4. Menu mobile (toggle do botão hamburguer no header)
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (mobileMenuButton && mobileMenu) {
+        const closeMobileMenu = () => {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('flex');
+            mobileMenuButton.setAttribute('aria-expanded', 'false');
+        };
+
+        mobileMenuButton.addEventListener('click', () => {
+            const isOpen = mobileMenu.classList.contains('flex');
+            mobileMenu.classList.toggle('hidden', isOpen);
+            mobileMenu.classList.toggle('flex', !isOpen);
+            mobileMenuButton.setAttribute('aria-expanded', String(!isOpen));
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768) {
+                closeMobileMenu();
+            }
+        });
+    }
 });
