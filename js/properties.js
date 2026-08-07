@@ -90,6 +90,7 @@ var PROPERTIES = [
     pool: false,
     badge: 'Lançamento',
     images: [
+      // Imagem placeholder reaproveitada do imóvel "obsidian-pavilion" — trocar pela foto real do imóvel.
       'https://lh3.googleusercontent.com/aida-public/AB6AXuCiumEjrO9frkyQrIsIaL9z3PfjDntycc1aM_naNjwXMwcb5ZCzDAzfja0Pnsto_KT5UXZP6_TdONJa39ITYRVF3HnDnbmssnXLI8UxjHh8uYrUcbKf186cL4sGYjvTH-tJI9vkYrNY0XOpyt88hKud2Cr62oxOmq34vuZGVBjZA_BGQVHIen8uOtbgug4PU1QvIHyaPZ1meabl3heyD-IL7L0zOlZmKfwMzdL6OG_1KLzRotGX80pg46JfloW4qHDXMte-Cxn-lZ3C',
     ],
     description: [
