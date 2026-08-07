@@ -9,7 +9,7 @@ Este é um projeto de portfólio para corretores de imóveis de alto padrão, de
 - **Detalhes da Propriedade:** Ficha técnica completa, diferenciais, galeria de imagens e mapa de localização.
 - **Conversão Otimizada:** Integração com Sheet Monkey para formulários e API direta do WhatsApp.
 - **Design Responsivo:** Experiência fluida em desktops, tablets e smartphones.
-- **Internacionalização:** Totalmente traduzido para Português (PT-BR) com valores em Reais (BRL).
+
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -52,5 +52,4 @@ Este é um projeto de portfólio para corretores de imóveis de alto padrão, de
 
 Este projeto foi desenvolvido como um portfólio de demonstração. Sinta-se à vontade para usá-lo e adaptá-lo.
 
----
-*Desenvolvido com o auxílio do Stitch.*
+
