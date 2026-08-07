@@ -3,15 +3,17 @@
  * DESCRIÇÃO: Lógica de interação, navegação e integração de formulários.
  */
 
+// Número de WhatsApp da imobiliária — troque aqui quando tiver o número real.
+// Usado tanto no formulário de contato.html quanto no botão "WhatsApp Direto" de detalhes.html.
+const WHATSAPP_NUMBER = '5511999999999';
+
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Estate Heritage: Scripts carregados com sucesso.');
 
-    // 1. Lógica para o formulário de contato / interesse
-    const forms = document.querySelectorAll('form');
-    forms.forEach(form => {
-        form.addEventListener('submit', (e) => {
-            // Aqui você pode adicionar validações extras antes do envio
-            // O envio real é feito via atributo 'action' configurado para o Sheet Monkey
+    // 1. Lógica para o formulário de interesse em detalhes.html (Sheet Monkey)
+    const sheetMonkeyForms = document.querySelectorAll('form[action*="sheetmonkey"]');
+    sheetMonkeyForms.forEach(form => {
+        form.addEventListener('submit', () => {
             console.log('Formulário enviado. Certifique-se de configurar a URL do Sheet Monkey no atributo action.');
         });
     });
@@ -88,6 +90,26 @@ document.addEventListener('DOMContentLoaded', () => {
                 citySlug: citySelect ? citySelect.value : '',
             });
             window.location.href = 'listagem.html' + (query ? '?' + query : '');
+        });
+    }
+
+    // 6. Formulário de contato: monta a mensagem e abre o WhatsApp
+    const contactForm = document.getElementById('contato-form');
+    if (contactForm && typeof PropertyUtils !== 'undefined') {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const nameField = document.getElementById('name');
+            const emailField = document.getElementById('email');
+            const subjectField = document.getElementById('subject');
+            const messageField = document.getElementById('message');
+            const message = PropertyUtils.buildWhatsAppMessage({
+                name: nameField.value,
+                email: emailField.value,
+                subject: subjectField.value,
+                message: messageField.value,
+            });
+            const link = PropertyUtils.buildWhatsAppLink(WHATSAPP_NUMBER, message);
+            window.open(link, '_blank');
         });
     }
 });
