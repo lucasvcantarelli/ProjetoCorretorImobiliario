@@ -116,9 +116,8 @@
 <div class="hidden md:flex items-center space-x-8">
 <a class="font-label-caps text-sm uppercase text-secondary hover:text-primary transition-colors duration-300" href="index.html">Início</a>
 <a class="font-label-caps text-sm uppercase text-primary border-b-2 border-primary pb-1" href="listagem.html">Portfólio</a>
-<a class="font-label-caps text-sm uppercase text-secondary hover:text-primary transition-colors duration-300" href="listagem.html">Residencial</a>
-<a class="font-label-caps text-sm uppercase text-secondary hover:text-primary transition-colors duration-300" href="listagem.html">Comercial</a>
-<a class="font-label-caps text-sm uppercase text-secondary hover:text-primary transition-colors duration-300" href="detalhes.html">Detalhes</a>
+<a class="font-label-caps text-sm uppercase text-secondary hover:text-primary transition-colors duration-300" href="listagem.html?tipo=residencial">Residencial</a>
+<a class="font-label-caps text-sm uppercase text-secondary hover:text-primary transition-colors duration-300" href="listagem.html?tipo=comercial">Comercial</a>
 <a class="font-label-caps text-sm uppercase text-secondary hover:text-primary transition-colors duration-300" href="contato.html">Contato</a>
 </div>
 <!-- Ações do Lado Direito -->
@@ -135,9 +134,8 @@
 <div class="hidden md:hidden flex-col gap-1 px-8 py-4 border-t border-outline-variant/50 bg-surface dark:bg-stone-900" id="mobile-menu">
 <a class="font-label-caps text-sm uppercase text-secondary py-3" href="index.html">Início</a>
 <a class="font-label-caps text-sm uppercase text-primary py-3" href="listagem.html">Portfólio</a>
-<a class="font-label-caps text-sm uppercase text-secondary py-3" href="listagem.html">Residencial</a>
-<a class="font-label-caps text-sm uppercase text-secondary py-3" href="listagem.html">Comercial</a>
-<a class="font-label-caps text-sm uppercase text-secondary py-3" href="detalhes.html">Detalhes</a>
+<a class="font-label-caps text-sm uppercase text-secondary py-3" href="listagem.html?tipo=residencial">Residencial</a>
+<a class="font-label-caps text-sm uppercase text-secondary py-3" href="listagem.html?tipo=comercial">Comercial</a>
 <a class="font-label-caps text-sm uppercase text-secondary py-3" href="contato.html">Contato</a>
 </div>
 </nav>
@@ -157,43 +155,61 @@
 <div>
 <h3 class="font-label-caps text-label-caps uppercase text-primary mb-6">Faixa de Preço</h3>
 <div class="space-y-4">
-<input class="w-full accent-primary" max="50000000" min="1000000" step="500000" type="range"/>
+<input class="w-full accent-primary" id="filtro-preco" max="50000000" min="1000000" step="500000" type="range" value="50000000"/>
 <div class="flex justify-between font-label-caps text-[10px] text-secondary">
 <span>R$ 1M</span>
-<span>R$ 50M+</span>
+<span id="filtro-preco-label">Até R$ 50.000.000</span>
 </div>
 </div>
 </div>
 <!-- Filtro de Dormitórios -->
 <div class="border-t border-outline-variant pt-8">
 <h3 class="font-label-caps text-label-caps uppercase text-primary mb-6">Quartos</h3>
-<div class="grid grid-cols-4 gap-2">
-<button class="py-2 border border-outline-variant hover:border-primary font-label-caps text-label-caps transition-all">1+</button>
-<button class="py-2 border border-outline-variant hover:border-primary font-label-caps text-label-caps transition-all">3+</button>
-<button class="py-2 bg-primary text-white font-label-caps text-label-caps">5+</button>
-<button class="py-2 border border-outline-variant hover:border-primary font-label-caps text-label-caps transition-all">8+</button>
+<div class="grid grid-cols-4 gap-2" id="filtro-quartos">
+<button class="quartos-btn py-2 border border-outline-variant hover:border-primary font-label-caps text-label-caps transition-all" data-min-suites="1" type="button">1+</button>
+<button class="quartos-btn py-2 border border-outline-variant hover:border-primary font-label-caps text-label-caps transition-all" data-min-suites="3" type="button">3+</button>
+<button class="quartos-btn py-2 border border-outline-variant hover:border-primary font-label-caps text-label-caps transition-all" data-min-suites="5" type="button">5+</button>
+<button class="quartos-btn py-2 border border-outline-variant hover:border-primary font-label-caps text-label-caps transition-all" data-min-suites="8" type="button">8+</button>
 </div>
 </div>
 <!-- Filtro de Localização -->
 <div class="border-t border-outline-variant pt-8">
 <h3 class="font-label-caps text-label-caps uppercase text-primary mb-6">Localização</h3>
-<div class="space-y-3">
+<div class="space-y-3" id="filtro-localizacao">
 <label class="flex items-center gap-3 cursor-pointer group">
-<input class="w-4 h-4 rounded-none border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<input class="w-4 h-4 rounded-none border-outline-variant text-primary focus:ring-primary" data-city-slug="bel-air" type="checkbox"/>
 <span class="font-body-md text-sm text-secondary group-hover:text-on-surface transition-colors flex items-center gap-1">
 <span class="material-symbols-outlined text-[16px]">location_on</span> Bel Air, Califórnia
                             </span>
 </label>
 <label class="flex items-center gap-3 cursor-pointer group">
-<input class="w-4 h-4 rounded-none border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<input class="w-4 h-4 rounded-none border-outline-variant text-primary focus:ring-primary" data-city-slug="saint-jean-cap-ferrat" type="checkbox"/>
 <span class="font-body-md text-sm text-secondary group-hover:text-on-surface transition-colors flex items-center gap-1">
 <span class="material-symbols-outlined text-[16px]">location_on</span> Saint-Jean-Cap-Ferrat, França
                             </span>
 </label>
 <label class="flex items-center gap-3 cursor-pointer group">
-<input class="w-4 h-4 rounded-none border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<input class="w-4 h-4 rounded-none border-outline-variant text-primary focus:ring-primary" data-city-slug="lago-de-como" type="checkbox"/>
 <span class="font-body-md text-sm text-secondary group-hover:text-on-surface transition-colors flex items-center gap-1">
 <span class="material-symbols-outlined text-[16px]">location_on</span> Lago de Como, Itália
+                            </span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-4 h-4 rounded-none border-outline-variant text-primary focus:ring-primary" data-city-slug="cidade-do-cabo" type="checkbox"/>
+<span class="font-body-md text-sm text-secondary group-hover:text-on-surface transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span> Cidade do Cabo, África do Sul
+                            </span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-4 h-4 rounded-none border-outline-variant text-primary focus:ring-primary" data-city-slug="faria-lima-sp" type="checkbox"/>
+<span class="font-body-md text-sm text-secondary group-hover:text-on-surface transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span> Faria Lima, São Paulo
+                            </span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-4 h-4 rounded-none border-outline-variant text-primary focus:ring-primary" data-city-slug="oscar-freire-sp" type="checkbox"/>
+<span class="font-body-md text-sm text-secondary group-hover:text-on-surface transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span> Oscar Freire, São Paulo
                             </span>
 </label>
 </div>
@@ -201,11 +217,11 @@
 <!-- Filtro de Comodidades -->
 <div class="border-t border-outline-variant pt-8">
 <h3 class="font-label-caps text-label-caps uppercase text-primary mb-6">Infraestrutura</h3>
-<div class="flex flex-wrap gap-2">
-<button class="px-3 py-1 border border-outline-variant rounded-full font-label-caps text-[10px] text-secondary hover:bg-surface-variant transition-all">CASA INTELIGENTE</button>
-<button class="px-3 py-1 border border-outline-variant rounded-full font-label-caps text-[10px] text-secondary hover:bg-surface-variant transition-all">SPA E BEM-ESTAR</button>
-<button class="px-3 py-1 border border-outline-variant rounded-full font-label-caps text-[10px] text-secondary hover:bg-surface-variant transition-all">ADEGA</button>
-<button class="px-3 py-1 border border-outline-variant rounded-full font-label-caps text-[10px] text-secondary hover:bg-surface-variant transition-all">CINEMA PRIVADO</button>
+<div class="flex flex-wrap gap-2" id="filtro-infraestrutura">
+<button class="amenity-btn px-3 py-1 border border-outline-variant rounded-full font-label-caps text-[10px] text-secondary hover:bg-surface-variant transition-all" data-amenity="casa-inteligente" type="button">CASA INTELIGENTE</button>
+<button class="amenity-btn px-3 py-1 border border-outline-variant rounded-full font-label-caps text-[10px] text-secondary hover:bg-surface-variant transition-all" data-amenity="spa" type="button">SPA E BEM-ESTAR</button>
+<button class="amenity-btn px-3 py-1 border border-outline-variant rounded-full font-label-caps text-[10px] text-secondary hover:bg-surface-variant transition-all" data-amenity="adega" type="button">ADEGA</button>
+<button class="amenity-btn px-3 py-1 border border-outline-variant rounded-full font-label-caps text-[10px] text-secondary hover:bg-surface-variant transition-all" data-amenity="cinema" type="button">CINEMA PRIVADO</button>
 </div>
 </div>
 </div>
@@ -214,9 +230,17 @@
              Área principal exibindo os cartões de imóveis. 
              Utiliza um layout de grade responsivo (1 coluna no mobile, 2 no desktop). -->
 <div class="flex-1">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="flex flex-wrap items-center justify-between gap-4 mb-8">
+<div class="flex gap-2" id="filtro-tipo-pills">
+<button class="tipo-pill px-4 py-2 rounded-full font-label-caps text-[10px] uppercase border border-outline-variant transition-all" data-tipo="" type="button">Todos</button>
+<button class="tipo-pill px-4 py-2 rounded-full font-label-caps text-[10px] uppercase border border-outline-variant transition-all" data-tipo="residencial" type="button">Residencial</button>
+<button class="tipo-pill px-4 py-2 rounded-full font-label-caps text-[10px] uppercase border border-outline-variant transition-all" data-tipo="comercial" type="button">Comercial</button>
+</div>
+<div class="flex flex-wrap gap-2" id="filtros-aplicados"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12" id="grade-imoveis">
 <!-- Card de Imóvel 1 -->
-<article class="group cursor-pointer" onclick="window.location.href='detalhes.html'">
+<article class="group cursor-pointer property-card" data-amenities="casa-inteligente adega" data-category="villa-moderna" data-city-slug="bel-air" data-id="obsidian-pavilion" data-price="28500000" data-suites="7" data-tipo="residencial" data-transaction="venda" onclick="window.location.href='detalhes.html?id=obsidian-pavilion'">
 <div class="relative overflow-hidden aspect-[4/3] bg-surface-container-high mb-6">
 <img alt="Vila moderna ultra-luxuosa em Beverly Hills" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiumEjrO9frkyQrIsIaL9z3PfjDntycc1aM_naNjwXMwcb5ZCzDAzfja0Pnsto_KT5UXZP6_TdONJa39ITYRVF3HnDnbmssnXLI8UxjHh8uYrUcbKf186cL4sGYjvTH-tJI9vkYrNY0XOpyt88hKud2Cr62oxOmq34vuZGVBjZA_BGQVHIen8uOtbgug4PU1QvIHyaPZ1meabl3heyD-IL7L0zOlZmKfwMzdL6OG_1KLzRotGX80pg46JfloW4qHDXMte-Cxn-lZ3C"/>
 <div class="absolute top-4 left-4">
@@ -230,7 +254,7 @@
 <span class="material-symbols-outlined text-[16px]">location_on</span> Bel Air, Califórnia
                             </p>
 </div>
-<a aria-label="Ver detalhes de The Obsidian Pavilion" class="w-10 h-10 border border-outline-variant flex items-center justify-center group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all" href="detalhes.html">
+<a aria-label="Ver detalhes de The Obsidian Pavilion" class="w-10 h-10 border border-outline-variant flex items-center justify-center group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all" href="detalhes.html?id=obsidian-pavilion">
 <span class="material-symbols-outlined">arrow_forward</span>
 </a>
 </div>
@@ -251,7 +275,7 @@
 <p class="font-headline-md text-headline-md text-primary">R$ 28.500.000</p>
 </article>
 <!-- Card de Imóvel 2 -->
-<article class="group cursor-pointer" onclick="window.location.href='detalhes.html'">
+<article class="group cursor-pointer property-card" data-amenities="adega cinema" data-category="propriedade-historica" data-city-slug="saint-jean-cap-ferrat" data-id="villa-lheritage" data-price="14200000" data-suites="5" data-tipo="residencial" data-transaction="venda" onclick="window.location.href='detalhes.html?id=villa-lheritage'">
 <div class="relative overflow-hidden aspect-[4/3] bg-surface-container-high mb-6">
 <img alt="Propriedade histórica na Riviera Francesa" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-4VeZYfL0FZMR_nkzgplKPh94CfOXPXr4qZKpMQWAMB62frMJBZAJhOOzSV4BYw7Ktsp3FtVgjPz7pJV0yqycrkkDiVDNwKzfB6FgrTHUXvaRjPkRLD5hXoPoWkq4Ejsn6vu7hqqQmvar4oT8yegP71krGx8Qk3EB2DyuPbePBLP0JrvlNjGamWmtH-oRoCl_B0UyvzXiP0K155s73I8H11PVteMzrkiY5FoT5nkpEG8tUUvS21_0qfalYQo7S5_bg41G3QkH-JZm"/>
 </div>
@@ -262,7 +286,7 @@
 <span class="material-symbols-outlined text-[16px]">location_on</span> Saint-Jean-Cap-Ferrat, França
                             </p>
 </div>
-<a aria-label="Ver detalhes de Villa L'Héritage" class="w-10 h-10 border border-outline-variant flex items-center justify-center group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all" href="detalhes.html">
+<a aria-label="Ver detalhes de Villa L'Héritage" class="w-10 h-10 border border-outline-variant flex items-center justify-center group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all" href="detalhes.html?id=villa-lheritage">
 <span class="material-symbols-outlined">arrow_forward</span>
 </a>
 </div>
@@ -283,7 +307,7 @@
 <p class="font-headline-md text-headline-md text-primary">R$ 14.200.000</p>
 </article>
 <!-- Card de Imóvel 3 -->
-<article class="group cursor-pointer" onclick="window.location.href='detalhes.html'">
+<article class="group cursor-pointer property-card" data-amenities="spa cinema" data-category="villa-moderna" data-city-slug="lago-de-como" data-id="azure-lake-house" data-price="21800000" data-suites="6" data-tipo="residencial" data-transaction="venda" onclick="window.location.href='detalhes.html?id=azure-lake-house'">
 <div class="relative overflow-hidden aspect-[4/3] bg-surface-container-high mb-6">
 <img alt="Mansão contemporânea de frente para o lago" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1wIMMwgbiUaEivNxGk6_kmeZ6HeP7fmfe6EICzF490ULHZhgX62lnsT0G48T4ifFDCH2VaPvjRTxrP4vD_rrJIHgQXdZlGmOmtbxg9V_pQ0y1qWJVY4pN23KBdiRw_0EPmJQx5ZC93upG5GtnThg3rq0ULTbcDcy3ECcG0qSszrHK7pch5wiazjRkyZ72_JIEOSK5HdL0FbHIZGOpw2iakR9xeISck5ePLYaZut58NjlRvufBn_pLKFMEre8i1A6jkYf5TL-7RIVu"/>
 </div>
@@ -294,7 +318,7 @@
 <span class="material-symbols-outlined text-[16px]">location_on</span> Lago de Como, Itália
                             </p>
 </div>
-<a aria-label="Ver detalhes de Azure Lake House" class="w-10 h-10 border border-outline-variant flex items-center justify-center group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all" href="detalhes.html">
+<a aria-label="Ver detalhes de Azure Lake House" class="w-10 h-10 border border-outline-variant flex items-center justify-center group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all" href="detalhes.html?id=azure-lake-house">
 <span class="material-symbols-outlined">arrow_forward</span>
 </a>
 </div>
@@ -315,7 +339,7 @@
 <p class="font-headline-md text-headline-md text-primary">R$ 21.800.000</p>
 </article>
 <!-- Card de Imóvel 4 -->
-<article class="group cursor-pointer" onclick="window.location.href='detalhes.html'">
+<article class="group cursor-pointer property-card" data-amenities="casa-inteligente spa" data-category="villa-moderna" data-city-slug="cidade-do-cabo" data-id="cliff-pavilion" data-price="9500000" data-suites="4" data-tipo="residencial" data-transaction="venda" onclick="window.location.href='detalhes.html?id=cliff-pavilion'">
 <div class="relative overflow-hidden aspect-[4/3] bg-surface-container-high mb-6">
 <img alt="Pavilhão moderno em encosta rochosa" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5bzA21kfpaGXY_rMWfNsy9OnXGX8-0KbFFY-3gVYOjj7P2SB_jeIjyqvyIn9PVZVIkzT-hWPrzf405rSQo4oRkt-y6GbYZw7tf9uw3P7XmhWdhUSwmVEJ37DKbD9hsNVG1rRFZUEyFlW5UxZXaWiYBVMdz9RzjhHfXWsmf1q9IoMh5nn7bsTd0nSIxjOaE5qtF27JjZcTbT1_TK0YEp9wk3axomdqcjlnUKiw8hDOAeFCrA5I6I9ln9rRA-FxUcF7If8nzgB_nQbg"/>
 </div>
@@ -326,7 +350,7 @@
 <span class="material-symbols-outlined text-[16px]">location_on</span> Cidade do Cabo, África do Sul
                             </p>
 </div>
-<a aria-label="Ver detalhes de The Cliff Pavilion" class="w-10 h-10 border border-outline-variant flex items-center justify-center group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all" href="detalhes.html">
+<a aria-label="Ver detalhes de The Cliff Pavilion" class="w-10 h-10 border border-outline-variant flex items-center justify-center group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all" href="detalhes.html?id=cliff-pavilion">
 <span class="material-symbols-outlined">arrow_forward</span>
 </a>
 </div>
@@ -346,24 +370,78 @@
 </div>
 <p class="font-headline-md text-headline-md text-primary">R$ 9.500.000</p>
 </article>
+<!-- Card de Imóvel 5 (Comercial) -->
+<article class="group cursor-pointer property-card" data-amenities="" data-category="" data-city-slug="faria-lima-sp" data-id="edificio-corporativo-aurora" data-price="45000000" data-suites="48" data-tipo="comercial" data-transaction="venda" onclick="window.location.href='detalhes.html?id=edificio-corporativo-aurora'">
+<div class="relative overflow-hidden aspect-[4/3] bg-surface-container-high mb-6">
+<img alt="Edifício corporativo de alto padrão na Faria Lima" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvTlQ7Z2Ba2d172d0rM1gbHEuNAQpoK27c5dLYd9cjXyYlerSj_54eMnVrwtF2TuzF6bQ3SY1Hit2bxRrvwf_T5XM19f6mGYjRAR-8DsOLvJfq67i8P7mwAG9MJeNuKKxQuZ3nx3DuDXZGJNsCtG4PCfbOQwOqdhkdX5qqIXkgU6K-uUJenzM932h6Q52oKWQAs4bRE1SQp6Jz-65clIBrV_3D8fwAvwZQmcJHUROqG5qeSDtKFjkzZAT1fSVHpyk3KozJ0vZ5LjGv"/>
+<div class="absolute top-4 left-4">
+<span class="bg-surface/90 backdrop-blur px-3 py-1 font-label-caps text-[10px] text-primary uppercase">Alto Padrão Corporativo</span>
 </div>
-<!-- PAGINAÇÃO
-                 Navegação entre páginas de resultados. -->
-<nav class="mt-20 flex justify-center items-center gap-4">
-<button aria-label="Página anterior" class="w-12 h-12 border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-white transition-all disabled:opacity-30 disabled:hover:bg-transparent" disabled="">
-<span class="material-symbols-outlined">chevron_left</span>
-</button>
-<div class="flex items-center gap-2">
-<button class="w-12 h-12 bg-primary text-white font-headline-md">01</button>
-<button class="w-12 h-12 border border-outline-variant font-headline-md hover:bg-surface-variant transition-all">02</button>
-<button class="w-12 h-12 border border-outline-variant font-headline-md hover:bg-surface-variant transition-all">03</button>
-<span class="px-4 font-headline-md text-secondary">...</span>
-<button class="w-12 h-12 border border-outline-variant font-headline-md hover:bg-surface-variant transition-all">14</button>
 </div>
-<button aria-label="Próxima página" class="w-12 h-12 border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-white transition-all">
-<span class="material-symbols-outlined">chevron_right</span>
-</button>
-</nav>
+<div class="flex justify-between items-start mb-2">
+<div>
+<h3 class="font-headline-md text-headline-md mb-1">Edifício Corporativo Aurora</h3>
+<p class="font-body-md text-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span> Faria Lima, São Paulo
+                            </p>
+</div>
+<a aria-label="Ver detalhes de Edifício Corporativo Aurora" class="w-10 h-10 border border-outline-variant flex items-center justify-center group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all" href="detalhes.html?id=edificio-corporativo-aurora">
+<span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<div class="flex gap-6 py-4 border-y border-outline-variant/50 mb-4">
+<div class="flex flex-col">
+<span class="font-label-caps text-[10px] text-primary uppercase">Salas</span>
+<span class="font-headline-md text-lg">48</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-[10px] text-primary uppercase">Vagas</span>
+<span class="font-headline-md text-lg">120</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-[10px] text-primary uppercase">Área</span>
+<span class="font-headline-md text-lg">3,200 <span class="text-xs font-body-md uppercase">m²</span></span>
+</div>
+</div>
+<p class="font-headline-md text-headline-md text-primary">R$ 45.000.000</p>
+</article>
+<!-- Card de Imóvel 6 (Comercial) -->
+<article class="group cursor-pointer property-card" data-amenities="" data-category="" data-city-slug="oscar-freire-sp" data-id="flagship-retail-prime" data-price="32000000" data-suites="1" data-tipo="comercial" data-transaction="venda" onclick="window.location.href='detalhes.html?id=flagship-retail-prime'">
+<div class="relative overflow-hidden aspect-[4/3] bg-surface-container-high mb-6">
+<img alt="Ponto comercial flagship na Oscar Freire" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-4VeZYfL0FZMR_nkzgplKPh94CfOXPXr4qZKpMQWAMB62frMJBZAJhOOzSV4BYw7Ktsp3FtVgjPz7pJV0yqycrkkDiVDNwKzfB6FgrTHUXvaRjPkRLD5hXoPoWkq4Ejsn6vu7hqqQmvar4oT8yegP71krGx8Qk3EB2DyuPbePBLP0JrvlNjGamWmtH-oRoCl_B0UyvzXiP0K155s73I8H11PVteMzrkiY5FoT5nkpEG8tUUvS21_0qfalYQo7S5_bg41G3QkH-JZm"/>
+<div class="absolute top-4 left-4">
+<span class="bg-surface/90 backdrop-blur px-3 py-1 font-label-caps text-[10px] text-primary uppercase">Ponto Comercial Premium</span>
+</div>
+</div>
+<div class="flex justify-between items-start mb-2">
+<div>
+<h3 class="font-headline-md text-headline-md mb-1">Flagship Retail Prime</h3>
+<p class="font-body-md text-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span> Oscar Freire, São Paulo
+                            </p>
+</div>
+<a aria-label="Ver detalhes de Flagship Retail Prime" class="w-10 h-10 border border-outline-variant flex items-center justify-center group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all" href="detalhes.html?id=flagship-retail-prime">
+<span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<div class="flex gap-6 py-4 border-y border-outline-variant/50 mb-4">
+<div class="flex flex-col">
+<span class="font-label-caps text-[10px] text-primary uppercase">Unidades</span>
+<span class="font-headline-md text-lg">01</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-[10px] text-primary uppercase">Vagas</span>
+<span class="font-headline-md text-lg">15</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-[10px] text-primary uppercase">Área</span>
+<span class="font-headline-md text-lg">850 <span class="text-xs font-body-md uppercase">m²</span></span>
+</div>
+</div>
+<p class="font-headline-md text-headline-md text-primary">R$ 32.000.000</p>
+</article>
+</div>
+<p class="hidden font-body-lg text-secondary text-center py-16" id="empty-state">Nenhum imóvel encontrado com esses filtros. <button class="text-primary underline" id="limpar-filtros" type="button">Limpar filtros</button></p>
 </div>
 </div>
 </main>
@@ -384,5 +462,8 @@
 </div>
 </footer>
 <!-- Scripts JavaScript Externos -->
+<script defer="" src="js/property-utils.js"></script>
+<script defer="" src="js/properties.js"></script>
+<script defer="" src="js/listagem.js"></script>
 <script defer="" src="js/scripts.js"></script>
 </body></html>
