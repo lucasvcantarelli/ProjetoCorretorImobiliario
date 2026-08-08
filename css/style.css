@@ -37,3 +37,11 @@ a, button {
 h1, h2, h3, .font-serif {
     font-family: 'Noto Serif', serif;
 }
+
+/* HERO com background em scroll story (ver js/construction-scroll.js).
+   Cor de fundo evita flash branco antes do primeiro frame decodificar;
+   contain isola o repaint do canvas do restante da página. */
+#hero-header {
+    background: #0c0a08;
+    contain: layout paint;
+}
